@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hot Restaurant | View Tables</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Hot Restaurant</h1>
+      <h3>Book your seat before they are gone.</h3>
+      <hr>
+      <a href="/add"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span> Make your reservation</button></a>
+      <a href="/api/characters"><button class="btn btn-danger btn-lg"><span
+            class="fa fa-eye"></span> View Tables</button></a>
+    </div>
+    <div class="row">
+
+      <div class="col-12">
+
+        <div class="card mb-4">
+          <div class="card-header">
+            <h3><strong>Current Tables</strong></h3>
+          </div>
+          <div class="card-body">
+            <h2 id="name1"></h2>
+            <h2 id="name2"></h2>
+            <h2 id="name3"></h2>
+            <h2 id="name4"></h2>
+            <h2 id="name5"></h2>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+        <div class="row">
+            <div class="col-12">
+
+        <div class="card mb-4">
+          <div class="card-header">
+            <h3><strong>Wait List</strong></h3>
+          </div>
+          <div class="card-body">
+            <div id="waitlist">
+</div>
+</div>
+
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var testTables = [
+        {name: "Jeff"},
+        {name: "Bob"},
+        {name: "Tim"},
+        {name: "Dave"},
+        {name: "Slagathor"},
+        {name: "Ed"},
+        {name: "Bill"},
+        {name: "George"}
+    ]
+    for(i = 0; i < 5; i++){
+       $(`#name${i + 1}`).text(testTables[i].name);
+       console.log(testTables[i].name)
+    }
+
+    for(i = 5; i < testTables.length; i++){
+       $("#waitlist").append(`<h2>${testTables[i].name}</h2>`);
+    }
+
+  </script>
+</body>
+
+</html>
